@@ -48,7 +48,7 @@ var handlers = {
     "LaunchRequest": function () {
         var speechText = "";
         speechText += "Welcome to " + skillName + ", Nami and Miya.  ";
-        speechText += "Its bedtime time, <audio src='https://s3.amazonaws.com/niltoid/audio/sound.mp3' />  Do you want to brush teeth, or change into pajamas first? ";
+        speechText += "Its bedtime time, <audio src='https://s3.amazonaws.com/niltoid/audio/sound.mp3' />  Do you want to brush teeth, or wear pajamas first? ";
         var repromptText = "Do you want to brush teeth, or wear pajamas first? ";
         this.emit(':ask', speechText, repromptText);
     }
