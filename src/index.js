@@ -1,19 +1,19 @@
 var Alexa = require('alexa-sdk');
-var Data = require("./data");
+//var Data = require("./data");
  
 const skillName = "Bedtime";
  
 var handlers = {
  
-    "LanguageIntent": function () {
+    "BedtimeActivityIntent": function () {
         function getRandomInt(min, max) {
             return Math.floor(Math.random() * (max - min)) + min;
         }
         var speechOutput = "";
-        if(this.event.request.intent.slots.Language.value && this.event.request.intent.slots.Language.value.toLowerCase() == "java") {
-            speechOutput = Data.java[getRandomInt(0, 2)];
-        } else if(this.event.request.intent.slots.Language.value && this.event.request.intent.slots.Language.value.toLowerCase() == "ionic framework") {
-            speechOutput = Data.ionic[getRandomInt(0, 3)];
+        if(this.event.request.intent.slots.Activity.value && this.event.request.intent.slots.Activity.value.toLowerCase() == "brush teeth") {
+            speechOutput = "brush, brush, brush. <audio src='https://s3.amazonaws.com/niltoid/audio/brushteeth.mp3' />";
+        } else if(this.event.request.intent.slots.Activity.value && this.event.request.intent.slots.Activity.value.toLowerCase() == "wear pajamas") {
+            speechOutput = "wear pajamas time!";
         } else {
             speechOutput = "I don't have anything interesting to share regarding what you've asked."
         }
@@ -48,8 +48,8 @@ var handlers = {
     "LaunchRequest": function () {
         var speechText = "";
         speechText += "Welcome to " + skillName + ", Nami and Miya.  ";
-        speechText += "You can ask a question like, <audio src='https://s3.amazonaws.com/niltoid/audio/sound.mp3' />  tell me something interesting about Java.  ";
-        var repromptText = "For instructions on what you can say, please say help me.";
+        speechText += "Its bedtime time, <audio src='https://s3.amazonaws.com/niltoid/audio/sound.mp3' />  Do you want to brush teeth, or change into pajamas first? ";
+        var repromptText = "Do you want to brush teeth, or wear pajamas first? ";
         this.emit(':ask', speechText, repromptText);
     }
  
@@ -57,7 +57,7 @@ var handlers = {
  
 exports.handler = function (event, context) {
     var alexa = Alexa.handler(event, context);
-    alexa.APP_ID = "amzn1.ask.skill.640b7c7f-06f0-4525-ab7a-deba656aa518";
+    alexa.APP_ID = "bedtime";
     alexa.registerHandlers(handlers);
     alexa.execute();
 };

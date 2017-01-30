@@ -9,5 +9,5 @@ cd ..
 rm -rf ./temp
 
 aws lambda update-function-code \
-  --function-name helloSkill\
+  --function-name bedtime\
   --zip-file "fileb://temp.zip"
