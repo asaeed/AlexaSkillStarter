@@ -1,0 +1,25 @@
+{
+    "intents": [
+        {
+            "intent": "BedtimeActivityIntent",
+            "slots": [
+                {
+                    "name": "Activity",
+                    "type": "ACTIVITY_LIST"
+                }
+            ]
+        },
+        {
+            "intent": "AboutIntent"
+        },
+        {
+            "intent": "AMAZON.HelpIntent"
+        },
+        {
+            "intent": "AMAZON.StopIntent"
+        },
+        {
+            "intent": "AMAZON.CancelIntent"
+        }
+    ]
+}

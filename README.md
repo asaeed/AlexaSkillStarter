@@ -6,6 +6,7 @@ In Alexa Skill Configuration
 Interaction Model
 -----------------
 
+```
 {
     "intents": [
         {
@@ -31,11 +32,13 @@ Interaction Model
         }
     ]
 }
+```
 
 
 Utterances
 ----------
 
+```
 AboutIntent who developed this skill
 AboutIntent tell me about the developer
 AboutIntent give me information about the developer
@@ -44,7 +47,7 @@ AboutIntent who is the author
 BedtimeActivityIntent {Activity}
 BedtimeActivityIntent i want to {Activity}
 BedtimeActivityIntent {Activity} first please
-
+```
 
 
 convert audio format
